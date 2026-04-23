@@ -28,3 +28,8 @@ function ejercicio3() {
         console.log(i*2);
     }
 }
+function mostrarMensaje1() { 
+    for (let i=5; i<=2; i--) {
+        console.log("Hola Mundo");
+    }   
+}
