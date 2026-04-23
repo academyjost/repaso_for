@@ -1,0 +1,110 @@
+/* Configuración de Fondo de Mármol Oscuro */
+body {
+    background: radial-gradient(circle, rgba(20,20,20,0.8) 0%, rgba(0,0,0,1) 100%),
+                url('https://www.transparenttextures.com/patterns/dark-matter.png'); /* Efecto mármol/textura */
+    color: #e0c38c; /* Dorado suave para texto */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 10px;
+    margin-top: 40px;
+}
+
+/* --- BOTONES DE ORO Y NEÓN --- */
+button {
+    background: linear-gradient(145deg, #1a1a1a, #000000);
+    color: #d4af37; /* Color Oro */
+    border: 2px solid #d4af37;
+    padding: 15px 30px;
+    margin: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 5px #d4af37;
+    text-transform: uppercase;
+}
+
+button:hover {
+    color: #ffffff;
+    background: #d4af37;
+    box-shadow: 0 0 20px #d4af37, 0 0 40px #ff00ff;
+    transform: scale(1.1) translateY(-5px);
+}
+
+/* --- EFECTO DE RAYOS DE COLORES --- */
+.lightning-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.lightning {
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    top: -100%;
+    opacity: 0;
+}
+
+/* Rayo 1: Cian */
+.color-1 { 
+    left: 20%; 
+    background: linear-gradient(to bottom, transparent, #00ffff);
+    animation: strike 4s infinite 1s;
+}
+
+/* Rayo 2: Magenta */
+.color-2 { 
+    left: 50%; 
+    background: linear-gradient(to bottom, transparent, #ff00ff);
+    animation: strike 5s infinite 3s;
+}
+
+/* Rayo 3: Amarillo/Oro */
+.color-3 { 
+    left: 80%; 
+    background: linear-gradient(to bottom, transparent, #fbff00);
+    animation: strike 6s infinite 0.5s;
+}
+
+@keyframes strike {
+    0% { top: -100%; opacity: 0; }
+    10% { top: 0; opacity: 1; }
+    15% { opacity: 0; }
+    20% { opacity: 1; }
+    25% { top: 100%; opacity: 0; }
+    100% { top: 100%; opacity: 0; }
+}
+
+/* Efecto Mármol en los botones */
+button::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: 0.5s;
+}
+
+button:hover::before {
+    left: 100%;
+}
