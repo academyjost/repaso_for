@@ -34,17 +34,18 @@ function mostrarMensaje1() {
     }   
 }
 function mostrarMensaje2() {
-    for (let i=10; i<=5; i++) {
+    for (let i = 10; i >= 8; i--) { 
         console.log("Hola Mundo");
     }
 }
 function mostrarMensaje3() {
-    for (let i=10; i>=5; i--) {
+    for (let i = 0; i < 3; i++) {
         console.log("Hola Mundo");
     }
 }
+ 
 function mostrarMensaje4() {
-    for (let i=5; i>10; i++) {
+    for (let i = 8; i > 5; i--) {
         console.log("Hola Mundo");
     }
 }
